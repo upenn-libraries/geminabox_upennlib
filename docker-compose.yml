@@ -2,9 +2,12 @@ version: '2'
 
 services:
   geminabox:
+    restart: 'unless-stopped'
     image: 'spoonest/geminabox:latest'
-    ports: 9292:9393
+    ports:
+      - '9292:9292'
     env_file:
       - '.env'
+    hostname: 'geminabox'
     volumes:
       - '${LOCAL_GEM_STORAGE}:/webapps/geminabox/data'
