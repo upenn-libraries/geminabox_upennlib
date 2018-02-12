@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  geminabox:
+    image: 'spoonest/geminabox:latest'
+    ports: 9292:9393
+    env_file:
+      - '.env'
+    volumes:
+      - '${LOCAL_GEM_STORAGE}:/webapps/geminabox/data'
